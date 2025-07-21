@@ -76,7 +76,7 @@
   </style>
 
   <!-- Header -->
-  <header class="relative z-10 bg-white/80 backdrop-blur-md shadow-lg sticky top-0">
+  <header class="relative z-10 bg-white/80 backdrop-blur-md shadow-lg">
     <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent flex items-center">
