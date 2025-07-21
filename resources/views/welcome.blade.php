@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>PrintWorks - Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Tailwind CSS CDN -->
@@ -231,7 +232,7 @@
               </div>
             </div>
           </div>
-          <form class="space-y-4 fade-in-right" onsubmit="event.preventDefault(); contactFormSubmit(this);">
+          <form method="POST" class="space-y-4 fade-in-right" onsubmit="event.preventDefault(); contactFormSubmit(this);">
             <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
             <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
             <textarea name="message" placeholder="Your Message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/50 resize-none"></textarea>
@@ -242,11 +243,35 @@
     </div>
   </section>
   <script>
-    function contactFormSubmit(form) {
-      // Simple feedback, replace with AJAX as needed
-      alert('Thank you for contacting us! We will get back to you soon.');
-      form.reset();
+   async function contactFormSubmit(form) {
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/contact/submit", {
+        method: "POST",
+        headers: {
+          "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+          "Accept": "application/json"
+        },
+        body: formData
+      });
+
+      if (response.ok) {
+        alert('Thank you for contacting us! We will get back to you soon.');
+        form.reset();
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          alert('Please fix the following errors:\n' + Object.values(data.errors).flat().join('\n'));
+        } else {
+          alert('Something went wrong. Please try again later.');
+        }
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('An error occurred. Please try again later.');
     }
+  }
   </script>
 
   <!-- Footer -->
