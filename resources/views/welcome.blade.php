@@ -65,7 +65,7 @@
 <body class="bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50 overflow-x-hidden font-sans">
 
 <!-- Floating Emojis -->
-<div class="fixed inset-0 pointer-events-none z-0" aria-hidden="true">
+<div class="fixed inset-0 pointer-events-none z-0 hidden lg:block" aria-hidden="true">
   <div class="absolute text-4xl" style="left:10%;top:20%;animation: float 6s ease-in-out infinite;">👕</div>
   <div class="absolute text-3xl" style="left:80%;top:15%;animation: float 8s 1s ease-in-out infinite;">📚</div>
   <div class="absolute text-5xl" style="left:15%;top:60%;animation: float 7s 2s ease-in-out infinite;">🖼️</div>
