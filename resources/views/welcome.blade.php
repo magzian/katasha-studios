@@ -288,69 +288,114 @@
   });
 </script>
   <!-- Contact Section -->
-  <section id="contact" class="relative z-10 bg-gradient-to-r from-purple-600 to-pink-600 py-20 text-white">
-    <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-        <h3 class="text-4xl md:text-5xl font-bold text-center mb-16 fade-in-up">Request a Quote or Contact Us</h3>
-        <div class="grid md:grid-cols-2 gap-12">
-          <div class="fade-in-left">
-            <h4 class="text-2xl font-semibold mb-6">Contact Information</h4>
-            <div class="space-y-4">
-              <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">📧</div>
-                <span>hello@printworks.com</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">📞</div>
-                <span>+1 (555) 987-6543</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">📍</div>
-                <span>456 Print Avenue, Business City</span>
-              </div>
+  <section id="contact" class="bg-gradient-to-r from-purple-600 to-pink-600 py-16 sm:py-20 text-white overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 fade-in-up">Request a Quote or Contact Us</h3>
+            
+            <div class="grid gap-8 md:gap-12 md:grid-cols-2">
+                <!-- Contact Information -->
+                <div class="fade-in-left">
+                    <h4 class="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Contact Information</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">📧</div>
+                            <span class="text-sm sm:text-base break-all">hello@printworks.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">📞</div>
+                            <span class="text-sm sm:text-base">+1 (555) 987-6543</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">📍</div>
+                            <span class="text-sm sm:text-base">456 Print Avenue, Business City</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="fade-in-right">
+                    <form method="POST" class="space-y-4" onsubmit="event.preventDefault(); contactFormSubmit(this);">
+                        <div class="w-full">
+                            <input 
+                                type="text" 
+                                name="name" 
+                                placeholder="Your Name" 
+                                required 
+                                class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/30 focus:bg-white/20 transition-all duration-200"
+                            >
+                        </div>
+                        <div class="w-full">
+                            <input 
+                                type="email" 
+                                name="email" 
+                                placeholder="Your Email" 
+                                required 
+                                class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/30 focus:bg-white/20 transition-all duration-200"
+                            >
+                        </div>
+                        <div class="w-full">
+                            <textarea 
+                                name="message" 
+                                placeholder="Your Message" 
+                                rows="4" 
+                                required 
+                                class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/30 focus:bg-white/20 resize-none transition-all duration-200"
+                            ></textarea>
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="w-full bg-white text-purple-600 py-3 rounded-lg font-semibold hover:bg-gray-100 active:bg-gray-200 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+                        >
+                            Send Message
+                        </button>
+                    </form>
+                </div>
             </div>
-          </div>
-          <form method="POST" class="space-y-4 fade-in-right" onsubmit="event.preventDefault(); contactFormSubmit(this);">
-            <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
-            <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
-            <textarea name="message" placeholder="Your Message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white/50 resize-none"></textarea>
-            <button type="submit" class="w-full bg-white text-purple-600 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">Send Message</button>
-          </form>
         </div>
-      </div>
     </div>
-  </section>
-  <script>
-   async function contactFormSubmit(form) {
+</section>
+
+<script>
+async function contactFormSubmit(form) {
     const formData = new FormData(form);
+    const submitButton = form.querySelector('button[type="submit"]');
+    
+    // Prevent double submissions
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
 
     try {
-      const response = await fetch("/contact/submit", {
-        method: "POST",
-        headers: {
-          "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-          "Accept": "application/json"
-        },
-        body: formData
-      });
+        const response = await fetch("/contact/submit", {
+            method: "POST",
+            headers: {
+                "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                "Accept": "application/json"
+            },
+            body: formData
+        });
 
-      if (response.ok) {
-        alert('Thank you for contacting us! We will get back to you soon.');
-        form.reset();
-      } else {
-        const data = await response.json();
-        if (data.errors) {
-          alert('Please fix the following errors:\n' + Object.values(data.errors).flat().join('\n'));
+        if (response.ok) {
+            alert('Thank you for contacting us! We will get back to you soon.');
+            form.reset();
         } else {
-          alert('Something went wrong. Please try again later.');
+            const data = await response.json();
+            if (data.errors) {
+                alert('Please fix the following errors:\n' + Object.values(data.errors).flat().join('\n'));
+            } else {
+                alert('Something went wrong. Please try again later.');
+            }
         }
-      }
     } catch (error) {
-      console.error('Submission error:', error);
-      alert('An error occurred. Please try again later.');
+        console.error('Submission error:', error);
+        alert('An error occurred. Please try again later.');
+    } finally {
+        // Re-enable button
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
     }
-  }
-  </script>
+}
+</script>
 
   <!-- Footer -->
   <footer class="relative z-10 bg-gray-900 text-white py-12">
