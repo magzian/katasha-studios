@@ -142,19 +142,40 @@
 
 <!-- Carousel Section -->
 <section id="books" class="py-20">
-  <div class="container mx-auto px-6">
-    <h3 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800 fade-in-up">Our Printing Products & Services</h3>
+  <div class="container mx-auto px-4 sm:px-6">
+    <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-800 fade-in-up">Our Printing Products & Services</h3>
+    
+    <!-- Desktop Navigation (hidden on mobile) -->
+    <div class="hidden sm:flex items-center justify-between mb-6">
+      <button onclick="carouselPrev()" id="carouselPrevBtn" class="px-4 py-2 rounded-full bg-purple-100 text-purple-600 font-bold hover:bg-purple-200 disabled:opacity-50 transition-all duration-200">
+        &#8592; Prev
+      </button>
+      <button onclick="carouselNext()" id="carouselNextBtn" class="px-4 py-2 rounded-full bg-purple-100 text-purple-600 font-bold hover:bg-purple-200 disabled:opacity-50 transition-all duration-200">
+        Next &#8594;
+      </button>
+    </div>
+    
+    <!-- Carousel Container -->
     <div class="relative">
-      <div class="flex items-center justify-between mb-4">
-        <button onclick="carouselPrev()" id="carouselPrevBtn" class="px-4 py-2 rounded-full bg-purple-100 text-purple-600 font-bold hover:bg-purple-200 disabled:opacity-50">&#8592; Prev</button>
-        <button onclick="carouselNext()" id="carouselNextBtn" class="px-4 py-2 rounded-full bg-purple-100 text-purple-600 font-bold hover:bg-purple-200 disabled:opacity-50">Next &#8594;</button>
-      </div>
-      <div id="carouselContainer" class="overflow-x-auto flex space-x-6 pb-4 scroll-smooth snap-x snap-mandatory">
+      <div id="carouselContainer" class="flex overflow-x-auto scrollbar-hide space-x-4 sm:space-x-6 pb-4 scroll-smooth snap-x snap-mandatory">
         <!-- Cards inserted dynamically -->
       </div>
+      
+      <!-- Mobile scroll indicator -->
+      <div class="sm:hidden flex justify-center mt-4 space-x-2">
+        <div class="w-2 h-2 bg-purple-300 rounded-full"></div>
+        <div class="w-2 h-2 bg-purple-600 rounded-full"></div>
+        <div class="w-2 h-2 bg-purple-300 rounded-full"></div>
+      </div>
     </div>
+    
+    <!-- Mobile-friendly navigation (optional touch instructions) -->
+    <p class="sm:hidden text-center text-gray-500 text-sm mt-4">
+      ← Swipe to explore more products →
+    </p>
   </div>
 </section>
+
 <script>
   const books = [
     {
@@ -164,7 +185,7 @@
       image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80",
     },
     {
-      title: "Children’s Coloring Books",
+      title: "Children's Coloring Books",
       description: "Fun and educational coloring books for kids.",
       price: "From $5.99",
       image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
@@ -175,40 +196,97 @@
       price: "From $19.99",
       image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
     },
+    {
+      title: "Custom Mugs",
+      description: "Personalized mugs perfect for gifts or promotional items.",
+      price: "From $7.99",
+      image: "https://images.unsplash.com/photo-1514228742587-6b1558fcf93d?auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      title: "Wedding Invitations",
+      description: "Elegant invitations for your special day.",
+      price: "From $2.99",
+      image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=80",
+    }
   ];
 
-  let carouselStart = 0;
+  function getCardWidth() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 640) return 280; // Mobile: smaller cards
+    if (screenWidth < 1024) return 320; // Tablet
+    return 350; // Desktop: larger cards
+  }
+
   function renderCarousel() {
     const container = document.getElementById("carouselContainer");
+    const cardWidth = getCardWidth();
+    
     container.innerHTML = "";
     books.forEach((book, index) => {
       const div = document.createElement("div");
-      div.className = "snap-start shrink-0 w-80 bg-white/80 rounded-2xl shadow-lg hover:shadow-xl overflow-hidden transition transform hover:scale-105";
+      div.className = `snap-start shrink-0 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl overflow-hidden transition-all duration-300 transform hover:scale-105`;
+      div.style.width = `${cardWidth}px`;
+      
       div.innerHTML = `
-        <img src="${book.image}" alt="${book.title}" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h4 class="text-xl font-semibold mb-2 text-gray-800">${book.title}</h4>
-          <p class="text-gray-600 mb-4">${book.description}</p>
-          <span class="text-2xl font-bold text-purple-600">${book.price}</span>
+        <img src="${book.image}" alt="${book.title}" class="w-full h-40 sm:h-48 object-cover">
+        <div class="p-4 sm:p-6">
+          <h4 class="text-lg sm:text-xl font-semibold mb-2 text-gray-800 line-clamp-2">${book.title}</h4>
+          <p class="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base line-clamp-2">${book.description}</p>
+          <span class="text-xl sm:text-2xl font-bold text-purple-600">${book.price}</span>
         </div>
       `;
       container.appendChild(div);
     });
+    
+    updateNavigationButtons();
   }
 
   function carouselNext() {
     const container = document.getElementById("carouselContainer");
-    container.scrollBy({ left: 320, behavior: "smooth" });
+    const cardWidth = getCardWidth();
+    const scrollAmount = cardWidth + 24; // card width + gap
+    container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    
+    setTimeout(updateNavigationButtons, 300);
   }
 
   function carouselPrev() {
     const container = document.getElementById("carouselContainer");
-    container.scrollBy({ left: -320, behavior: "smooth" });
+    const cardWidth = getCardWidth();
+    const scrollAmount = cardWidth + 24; // card width + gap
+    container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    
+    setTimeout(updateNavigationButtons, 300);
   }
 
-  document.addEventListener("DOMContentLoaded", renderCarousel);
-</script>
+  function updateNavigationButtons() {
+    const container = document.getElementById("carouselContainer");
+    const prevBtn = document.getElementById("carouselPrevBtn");
+    const nextBtn = document.getElementById("carouselNextBtn");
+    
+    if (prevBtn && nextBtn) {
+      prevBtn.disabled = container.scrollLeft <= 0;
+      nextBtn.disabled = container.scrollLeft >= (container.scrollWidth - container.clientWidth - 10);
+    }
+  }
 
+  // Handle window resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      renderCarousel();
+    }, 250);
+  });
+
+  // Add scroll event listener for navigation button updates
+  document.addEventListener("DOMContentLoaded", () => {
+    renderCarousel();
+    
+    const container = document.getElementById("carouselContainer");
+    container.addEventListener('scroll', updateNavigationButtons);
+  });
+</script>
   <!-- Contact Section -->
   <section id="contact" class="relative z-10 bg-gradient-to-r from-purple-600 to-pink-600 py-20 text-white">
     <div class="container mx-auto px-6">
