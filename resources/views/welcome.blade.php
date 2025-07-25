@@ -181,22 +181,22 @@
     {
       title: "Custom Shirt Printing",
       description: "High-quality t-shirt printing for events, businesses, and personal use.",
-      price: "From $9.99",
-      image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80",
+      price: "From Ksh300", 
+      image: "/images/shirt2.jpeg",
     },
     {
       title: "Children's Coloring Books",
       description: "Fun and educational coloring books for kids.",
-      price: "From $5.99",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+      price: "From Ksh50", 
+      image: "/images/color1.jpeg",
     },
     {
       title: "Business Banners",
       description: "Durable banners for promotions, events, and storefronts.",
-      price: "From $19.99",
-      image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+      price: "From Ksh3000",
+      image: "/images/banner.jpeg",
     },
-    {
+    /* {
       title: "Custom Mugs",
       description: "Personalized mugs perfect for gifts or promotional items.",
       price: "From $7.99",
@@ -207,7 +207,7 @@
       description: "Elegant invitations for your special day.",
       price: "From $2.99",
       image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=80",
-    }
+    } */
   ];
 
   function getCardWidth() {
@@ -291,7 +291,7 @@
   <section id="contact" class="bg-gradient-to-r from-purple-600 to-pink-600 py-16 sm:py-20 text-white overflow-hidden">
     <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
         <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 fade-in-up">Request a Quote or Contact Us</h3>
+            <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 fade-in-up">Contact Us</h3>
             
             <div class="grid gap-8 md:gap-12 md:grid-cols-2">
                 <!-- Contact Information -->
