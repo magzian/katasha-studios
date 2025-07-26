@@ -80,7 +80,7 @@
 <header class="z-10 bg-white/80 backdrop-blur-md shadow-lg sticky top-0">
   <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
     <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent flex items-center">
-      <span class="mr-2">🖨️</span> Mambo Alphabet
+      <span class="mr-2">🖨️</span> Katasha Studios
     </h1>
     <div class="hidden md:flex space-x-8">
       <a href="#home" class="hover:text-purple-600 text-gray-700 font-medium">Home</a>
@@ -403,7 +403,7 @@ async function contactFormSubmit(form) {
       <div class="text-center">
         <div class="flex items-center justify-center space-x-3 mb-4">
           <span class="text-2xl">🖨️</span>
-          <h1 class="text-xl font-bold">Mambo Alphabet</h1>
+          <h1 class="text-xl font-bold">Katasha Studios</h1>
         </div>
         <p class="text-gray-400 mb-6">Quality printing for shirts, books, banners, and more</p>
         <div class="flex justify-center space-x-6 mb-6">
