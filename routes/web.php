@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SubmitContactFormController;
+use App\Http\Controllers\SuccessPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
 Route::post('/contact/submit', SubmitContactFormController::class)->name('contact-form.submit');
+
+Route::get('/success-page', [SuccessPageController::class , 'index'])->name('sucess-page');
