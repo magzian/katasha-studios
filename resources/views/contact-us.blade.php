@@ -22,7 +22,7 @@
           </div>
         </div>
         <!-- Contact Form -->
-        <div class="fade-in-right">
+        {{-- <div class="fade-in-right">
           <form method="POST" class="space-y-4" onsubmit="event.preventDefault(); contactFormSubmit(this);">
             <div class="w-full">
               <input 
@@ -58,7 +58,7 @@
               Send Message
             </button>
           </form>
-        </div>
+        </div> --}} 
       </div>
     </div>
   </div>
