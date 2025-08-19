@@ -53,19 +53,19 @@
       title: "Family & Portrait Photography",
       description: "Professional family, kids, and individual portraits in studio or on location.",
       price: "From Ksh2000",
-      image: "/images/.jpeg",
+      image: "/images/placeholder.jpg",
     },
     {
       title: "Wedding & Event Photography",
       description: "Capture your special day with our creative and reliable wedding/event photography.",
       price: "From Ksh15,000",
-      image: "/images/service-wedding.jpg",
+      image: "/images/placeholder.jpg",
     },
     {
       title: "Passport & ID Photos",
       description: "Quick, compliant passport and ID photos with instant printing.",
       price: "From Ksh300",
-      image: "/images/service-passport.jpg",
+      image: "/images/placeholder.jpg",
     },
   ];
 
