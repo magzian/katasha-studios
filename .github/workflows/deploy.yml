@@ -6,7 +6,6 @@ on:
   # release:
   #   types: [created]
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,8 +35,9 @@ jobs:
       - name: Create Storage Link
         run: php artisan storage:link
 
-      - name: Run Migrations
-        run: php artisan migrate 
+      # REMOVED: Run Migrations (this was causing the connection error)
+      # - name: Run Migrations
+      #   run: php artisan migrate 
 
       - name: Install node dependencies
         run: npm ci
@@ -62,10 +62,11 @@ jobs:
             git fetch --all
             git checkout main
             git pull
-            composer install
+            composer install --no-dev --optimize-autoloader
             npm ci
             npm run build
             php artisan migrate --force
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
+            php artisan queue:restart
