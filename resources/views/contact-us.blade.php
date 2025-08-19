@@ -22,7 +22,7 @@
           </div>
         </div>
         <!-- Contact Form -->
-        {{-- <div class="fade-in-right">
+        <div class="fade-in-right">
           <form method="POST" class="space-y-4" onsubmit="event.preventDefault(); contactFormSubmit(this);">
             <div class="w-full">
               <input 
@@ -55,10 +55,10 @@
               type="submit" 
               class="w-full bg-white text-purple-600 py-3 rounded-lg font-semibold hover:bg-gray-100 active:bg-gray-200 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
             >
-              Send Message, oh and it worked
+              Send Message
             </button>
           </form>
-        </div> --}} 
+        </div> 
       </div>
     </div>
   </div>
