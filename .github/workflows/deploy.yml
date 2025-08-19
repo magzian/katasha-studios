@@ -37,7 +37,7 @@ jobs:
         run: php artisan storage:link
 
       - name: Run Migrations
-        run: php artisan migrate --force
+        run: php artisan migrate 
 
       - name: Install node dependencies
         run: npm ci
