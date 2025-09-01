@@ -1,17 +1,22 @@
-<section id="home"
-  class="min-h-screen flex items-center relative"
-  style="background: linear-gradient(rgba(24,24,27,0.7), rgba(24,24,27,0.7)), url('/images/nature.jpg') center/cover no-repeat;">
-  <div class="container mx-auto px-6 py-20 flex flex-col lg:items-start items-center justify-center h-full">
-    <div class="max-w-xl fade-in-up w-full">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white drop-shadow-lg text-center lg:text-left" style="font-family: 'Montserrat', Arial, sans-serif;">
-        Capturing Moments, Creating Memories
-      </h2>
-      <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-8 text-center lg:text-left" style="transition-delay:0.2s;font-family:'Lato',Arial,sans-serif;">
-        Professional photography for families, weddings, passports, and more. Plus, top-tier printing services for all your needs.
-      </p>
-      <div class="flex justify-center lg:justify-start w-full">
-        <a href="#contact" class="border-2 border-gray-400 text-gray-100 px-6 py-3 md:px-6 md:py-3 sm:px-4 sm:py-2 text-sm sm:text-base md:text-lg lg:text-base rounded-full font-semibold hover:bg-gray-800 hover:text-white transition">Book a Session</a>
-      </div>
-    </div>
+<section id="home" class="min-h-screen flex flex-col md:flex-row">
+  <!-- Mobile: Background image with overlay text -->
+  <div class="md:hidden relative w-full min-h-screen flex flex-col items-center justify-center text-center" 
+       style="background: linear-gradient(rgba(211, 211, 211, 0.8), rgba(211, 211, 211, 0.8)), url('/images/hero-image-1.jpeg'); background-size: cover; background-position: center;">
+        <h2 class="text-3xl font-bold mb-6 text-black px-6">Capturing Moments, Creating Memories</h2>
+        <p class="text-xl text-black px-8">Professional photography for families, weddings, passports, and more. Plus, top-tier printing services for all your needs.</p>
+  </div>
+  
+  <!-- Desktop: Original three-column layout -->
+  <div class="hidden md:block md:w-1/3">
+      <img src="/images/hero-image-1.jpeg" alt="Hero image 1" class="w-full h-full object-cover">
+  </div>
+  <div style="background: #D3D3D3" class="hidden md:flex md:w-1/3 flex-col items-center justify-center text-center px-4 ">
+        <h2 class="fade-in-up text-2xl font-bold mb-4 text-black px-5">Capturing Moments, Creating Memories</h2>
+        <p class="fade-in-up text-lg text-black px-6">Professional photography for families, weddings, passports, and more. Plus, top-tier printing services for all your needs.</p>
+  </div>
+  <div class="hidden md:block md:w-1/3">
+      <img src="/images/hero-image-2.jpeg" alt="Hero image 2" class="w-full h-full object-cover">
   </div>
 </section>
+
+
