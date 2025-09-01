@@ -82,14 +82,17 @@
 <!-- About Section -->
 @include('about-us')
 
+<!-- Media Section -->
+@include('media')
+
 <!-- Services Section (renamed from books) -->
-@include('services')
+@include('services') 
 
 <!-- Contact Section -->
-@include('contact-us')
+@include('contact-us') 
 
 <!-- Footer -->
-@include('footer')
+@include('footer') 
 
 <!-- Scroll Animation Script -->
 <script>

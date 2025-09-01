@@ -1,19 +1,43 @@
-<section id="about" class="bg-neutral-800/90 backdrop-blur-sm py-20">
-  <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-12">
-    <!-- Left: Heading and Paragraph -->
-    <div class="flex-1 w-full max-w-xl fade-in-up">
-      <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white text-center lg:text-left" style="font-family: 'Montserrat', Arial, sans-serif;">About Katasha Studios</h3>
-      <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-8 text-center lg:text-left" style="transition-delay:0.2s;font-family:'Lato',Arial,sans-serif;">
-        Katasha Studios blends artistry and technology to deliver stunning photography and high-quality printing. From family portraits to business banners, we capture and create with passion.
-      </p>
-    </div>
-    <!-- Right: Overlapping Images -->
-    <div class="flex-1 w-full flex items-center justify-center relative min-h-[220px] max-w-xl mt-8 lg:mt-0">
-      <div class="relative w-64 h-48 sm:w-80 sm:h-56 md:w-96 md:h-64 lg:w-[480px] lg:h-[340px]">
-        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Placeholder 1" class="absolute top-0 left-0 w-40 h-32 sm:w-48 sm:h-36 md:w-56 md:h-40 lg:w-64 lg:h-48 object-cover rounded-xl shadow-lg border-4 border-neutral-900 z-30" style="transform: rotate(-8deg);">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Placeholder 2" class="absolute top-8 left-16 w-40 h-32 sm:w-48 sm:h-36 md:w-56 md:h-40 lg:w-64 lg:h-48 object-cover rounded-xl shadow-lg border-4 border-neutral-900 z-20" style="transform: rotate(6deg);">
-        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Placeholder 3" class="absolute top-16 left-32 w-40 h-32 sm:w-48 sm:h-36 md:w-56 md:h-40 lg:w-64 lg:h-48 object-cover rounded-xl shadow-lg border-4 border-neutral-900 z-10" style="transform: rotate(-4deg);">
-      </div>
-    </div>
+{{-- <section class="flex h-auto" style="background: #f5f4f2ff;">
+
+  <div class="flex-1 flex items-center justify-center text-center">
+    <p class="px-24 text-lg sm:text-sm md:text-lg lg:text-xl text-gray-900 lg:text-left " style="font-family: 'Montserrat', Arial, sans-serif;">Creating memories that last a lifetime</p>
   </div>
-</section>
+  <div class="border-l border-gray-800 h-56 my-24"></div>
+  <div class="flex-1 flex items-center justify-center text-center">
+     <p class="px-24 text-lg sm:text-sm md:text-lg lg:text-xl text-gray-900 lg:text-left " style="font-family: 'Montserrat', Arial, sans-serif;">Katasha Studios</p>
+  </div>
+  <div class="border-l border-gray-800 h-56 my-24"></div>
+  <div class="flex-1 flex items-center justify-center text-center"> <p class="px-12 text-sm sm:text-base md:text-lg lg:text-xl text-gray-900 mb-8 text-center lg:text-left" style="transition-delay:0.2s;font-family:'Lato',Arial,sans-serif;">
+        Katasha Studios blends artistry and technology to deliver stunning photography and high-quality printing. From family portraits to business banners, we capture and create with passion.
+      </p></div>
+</section>  --}} 
+
+    <section id="about" class="flex flex-col lg:flex-row h-auto py-8 lg:py-0" style="background: #f5f4f2ff;">
+        <!-- First content block -->
+        <div class="flex-1 flex items-center justify-center text-center px-4 py-6 lg:py-24">
+            <p class="px-4 sm:px-8 lg:px-24 text-base sm:text-lg md:text-xl lg:text-xl text-gray-900 text-center lg:text-left" style="font-family: 'Montserrat', Arial, sans-serif;">
+                Creating memories that last a lifetime
+            </p>
+        </div>
+        
+        <!-- Divider - horizontal on mobile, vertical on desktop -->
+        <div class="border-t lg:border-t-0 lg:border-l border-gray-800 w-full lg:w-0 h-px lg:h-56 mx-4 lg:mx-0 my-4 lg:my-24"></div>
+        
+        <!-- Second content block -->
+        <div class="flex-1 flex items-center justify-center text-center px-4 py-6 lg:py-24">
+            <p class="px-4 sm:px-8 lg:px-24 text-base sm:text-lg md:text-xl lg:text-xl text-gray-900 text-center lg:text-left font-medium" style="font-family: 'Montserrat', Arial, sans-serif;">
+                Katasha Studios
+            </p>
+        </div>
+        
+        <!-- Divider - horizontal on mobile, vertical on desktop -->
+        <div class="border-t lg:border-t-0 lg:border-l border-gray-800 w-full lg:w-0 h-px lg:h-56 mx-4 lg:mx-0 my-4 lg:my-24"></div>
+        
+        <!-- Third content block -->
+        <div class="flex-1 flex items-center justify-center text-center px-4 py-6 lg:py-24">
+            <p class="px-4 sm:px-8 lg:px-12 text-sm sm:text-base md:text-lg lg:text-xl text-gray-900 text-center lg:text-left leading-relaxed" style="transition-delay:0.2s;font-family:'Lato',Arial,sans-serif;">
+                Katasha Studios blends artistry and technology to deliver stunning photography and high-quality printing. From family portraits to business banners, we capture and create with passion.
+            </p>
+        </div>
+    </section>
