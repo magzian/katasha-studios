@@ -1,4 +1,4 @@
-<section id="contact" class="sm:py-20 overflow-hidden" style="background: #D3D3D3; color: #232323;">
+<section id="contact" class="py-20 sm:py-20 overflow-hidden" style="background: #D3D3D3; color: #232323;">
   <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
     <div class="max-w-5xl mx-auto">
     
