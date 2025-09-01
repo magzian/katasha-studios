@@ -21,8 +21,8 @@
             </p>
         </div>
         
-        <!-- Divider - horizontal on mobile, vertical on desktop -->
-        <div class="border-t lg:border-t-0 lg:border-l border-gray-800 w-full lg:w-0 h-px lg:h-56 mx-4 lg:mx-0 my-4 lg:my-24"></div>
+    <!-- Divider - only visible on lg and up -->
+    <div class="hidden lg:block border-l border-gray-800 w-0 h-56 mx-0 my-24"></div>
         
         <!-- Second content block -->
         <div class="flex-1 flex items-center justify-center text-center px-4 py-6 lg:py-24">
@@ -31,8 +31,8 @@
             </p>
         </div>
         
-        <!-- Divider - horizontal on mobile, vertical on desktop -->
-        <div class="border-t lg:border-t-0 lg:border-l border-gray-800 w-full lg:w-0 h-px lg:h-56 mx-4 lg:mx-0 my-4 lg:my-24"></div>
+    <!-- Divider - only visible on lg and up -->
+    <div class="hidden lg:block border-l border-gray-800 w-0 h-56 mx-0 my-24"></div>
         
         <!-- Third content block -->
         <div class="flex-1 flex items-center justify-center text-center px-4 py-6 lg:py-24">
